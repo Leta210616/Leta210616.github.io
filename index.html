@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">  
+    <title>Gestion de Lista de Tareas</title>
+    <style>
+      @import url(style.css);
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+  </head>
+  <body>
+  <form name="guardar_tarea" id="guardar_tarea">
+    <div class="wrapper">
+      <div class="task-input">
+        <input type="text" name="tarea" id="tarea" placeholder="Agregar nueva tarea" required>
+		<input type="hidden" name="id_tarea" id="id_tarea" value="0">
+	
+      </div>
+      <div class="controls">
+        <div class="filters">
+          <span class="active" id="all" onclick="cargar_tareas('null')">Todas</span>
+          <span id="pending" onclick="cargar_tareas('0')">Pendientes</span>
+          <span id="completed" onclick="cargar_tareas('1')">Completadas</span>
+        </div>
+        <button type="button" class="clear-btn active" onclick="eliminar_todo();" >Borrar todo</button>
+      </div>
+	  <div id="loader"></div>
+      <ul class="task-box"></ul>
+    </div>
+</form>	
+   
+	<script src="app.js" async></script>
+
+  </body>
+</html>
